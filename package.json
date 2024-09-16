@@ -1,0 +1,32 @@
+{
+	"name": "@beyond-js/ts-processor",
+	"version": "1.0.0",
+	"description": "Typescript processor for Beyond.js",
+	"main": "index.js",
+	"exports": {
+		".": "./src/index.js",
+		"./processor/hashes": "./src/processor/hashes/index.js",
+		"./processor/options": "./src/processor/options/index.js",
+		"./processor/analyzer": "./src/processor/analyzer/index.js",
+		"./processor/dependencies": "./src/processor/dependencies/index.js",
+		"./processor/dependencies/declarations": "./src/processor/dependencies/declarations/index.js",
+		"./packager/compilers": "./src/packager/compilers/index.js",
+		"./packager/declaration": "./src/packager/declaration/index.js",
+		"./packager/code": "./src/packager/code/index.js"
+	},
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"keywords": [
+		"beyond",
+		"beyondjs",
+		"bridge",
+		"bundle"
+	],
+	"author": "BeyondJS",
+	"license": "MIT",
+	"dependencies": {
+		"@beyond-js/crc32": "^0.0.1",
+		"@beyond-js/dynamic-processor": "^0.0.3"
+	}
+}
