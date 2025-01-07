@@ -1,6 +1,6 @@
 {
 	"name": "@beyond-js/ts-processor",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"description": "Typescript processor for Beyond.js",
 	"main": "index.js",
 	"exports": {
@@ -27,6 +27,6 @@
 	"license": "MIT",
 	"dependencies": {
 		"@beyond-js/crc32": "^0.0.1",
-		"@beyond-js/dynamic-processor": "^0.0.3"
+		"@beyond-js/dynamic-processor": "~0.0.7"
 	}
 }

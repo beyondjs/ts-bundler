@@ -1,3 +1,6 @@
+/**
+ * TS Bundle settings
+ */
 const Hashes = require('@beyond-js/ts-processor/processor/hashes');
 const Options = require('@beyond-js/ts-processor/processor/options');
 const Analyzer = require('@beyond-js/ts-processor/processor/analyzer');
