@@ -1,4 +1,5 @@
-module.exports = class extends global.Bundle {
+const Bundle = require('@beyond-js/bundler-sdk/bundle');
+module.exports = class extends Bundle {
 	processConfig(config) {
 		if (!['object', 'string'].includes(typeof config)) {
 			return { errors: ['Invalid configuration'] };

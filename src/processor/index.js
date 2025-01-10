@@ -1,13 +1,13 @@
 /**
  * TS Bundle settings
  */
-const Hashes = require('@beyond-js/ts-processor/processor/hashes');
-const Options = require('@beyond-js/ts-processor/processor/options');
-const Analyzer = require('@beyond-js/ts-processor/processor/analyzer');
-const Dependencies = require('@beyond-js/ts-processor/processor/dependencies');
-const declarations = require('@beyond-js/ts-processor/packager/declaration');
-const compilers = require('@beyond-js/ts-processor/packager/compilers');
-const Code = require('@beyond-js/ts-processor/packager/code');
+const Hashes = require('@beyond-js/ts-bundler/processor/hashes');
+const Options = require('@beyond-js/ts-bundler/processor/options');
+const Analyzer = require('@beyond-js/ts-bundler/processor/analyzer');
+const Dependencies = require('@beyond-js/ts-bundler/processor/dependencies');
+const declarations = require('@beyond-js/ts-bundler/packager/declaration');
+const compilers = require('@beyond-js/ts-bundler/packager/compilers');
+const Code = require('@beyond-js/ts-bundler/packager/code');
 
 module.exports = {
 	name: 'ts',
