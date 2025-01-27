@@ -1,0 +1,22 @@
+{
+	"name": "ts-bundle-test",
+	"version": "0.0.1",
+	"title": "",
+	"description": "",
+	"license": "MIT",
+	"modules": {
+		"path": "modules"
+	},
+	"bundlers": {
+		"ts": {
+			"specifier": "@beyond-js/ts-bundler/bundle"
+		}
+	},
+	"dependencies": {
+		"@beyond-js/kernel": "~0.1.9"
+	},
+	"devDependencies": {
+		"@beyond-js/local": "~0.1.3",
+		"@beyond-js/ts-bundler": "file://../../.."
+	}
+}
