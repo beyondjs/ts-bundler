@@ -18,6 +18,8 @@ const workspace = new Workspace(path);
 		for (const module of pkg.modules.values()) {
 			await module.ready;
 			console.log(`  • Module: ${module.id}`);
+
+			await module.bundler?.ready;
 		}
 	}
 
