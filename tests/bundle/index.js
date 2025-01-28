@@ -19,7 +19,7 @@ const workspace = new Workspace(path);
 			await module.ready;
 			console.log(`  • Module: ${module.id}`);
 
-			await module.bundler?.ready;
+			await module.exports.ready;
 		}
 	}
 
