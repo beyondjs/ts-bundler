@@ -17,7 +17,7 @@ const workspace = new Workspace(path);
 
 		for (const module of pkg.modules.values()) {
 			await module.ready;
-			console.log('  • Module:', module.id, module.platforms);
+			console.log(`  • Module: ${module.id}`);
 		}
 	}
 

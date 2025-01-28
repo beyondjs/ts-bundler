@@ -9,7 +9,7 @@
 	},
 	"bundlers": {
 		"ts": {
-			"specifier": "@beyond-js/ts-bundler/bundle"
+			"specifier": "@beyond-js/ts-bundler/bundler"
 		}
 	},
 	"dependencies": {

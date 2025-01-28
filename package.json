@@ -3,16 +3,8 @@
 	"version": "0.0.1",
 	"description": "Typescript processor for BeyondJS",
 	"exports": {
-		"./bundle": "./lib/bundle/index.js",
-		"./processor": "./lib/processor/index.js",
-		"./processor/hashes": "./lib/processor/processor/hashes/index.js",
-		"./processor/options": "./lib/processor/processor/options/index.js",
-		"./processor/analyzer": "./lib/processor/processor/analyzer/index.js",
-		"./processor/dependencies": "./lib/processor/processor/dependencies/index.js",
-		"./processor/dependencies/declarations": "./lib/processor/processor/dependencies/declarations/index.js",
-		"./packager/compilers": "./lib/packager/compilers/index.js",
-		"./packager/declaration": "./lib/packager/declaration/index.js",
-		"./packager/code": "./lib/packager/code/index.js"
+		"./bundler": "./lib/bundler/index.js",
+		"./processor": "./lib/processor/index.js"
 	},
 	"engines": {
 		"node": ">=14.0.0"
