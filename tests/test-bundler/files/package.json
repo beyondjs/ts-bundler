@@ -5,11 +5,11 @@
 	"description": "",
 	"license": "MIT",
 	"modules": {
-		"path": "modules"
+		"path": "."
 	},
 	"bundlers": {
 		"ts": {
-			"specifier": "@beyond-js/ts-bundler/bundler"
+			"specifier": "@beyond-js/ts-bundler/module"
 		}
 	},
 	"dependencies": {
