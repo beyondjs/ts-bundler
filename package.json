@@ -1,9 +1,9 @@
 {
 	"name": "@beyond-js/ts-bundler",
 	"version": "0.0.1",
-	"description": "Typescript processor for BeyondJS",
+	"description": "BeyondJS Typescript Bundler / Processor",
 	"exports": {
-		"./module": "./lib/module/index.js",
+		".": "./lib/module/index.js",
 		"./processor": "./lib/processor/index.js"
 	},
 	"engines": {
@@ -19,8 +19,8 @@
 	"license": "MIT",
 	"dependencies": {
 		"typescript": "~5.7.3",
-		"@beyond-js/crc32": "^0.0.1",
 		"@beyond-js/dynamic-processor": "~0.0.7",
+		"@beyond-js/equal": "~0.0.1",
 		"@beyond-js/bundlers-sdk": "file://../../bundlers-sdk"
 	}
 }
