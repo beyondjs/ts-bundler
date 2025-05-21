@@ -4,7 +4,8 @@
 	"description": "BeyondJS Typescript Bundler / Processor",
 	"exports": {
 		".": "./lib/module/index.js",
-		"./processor": "./lib/processor/index.js"
+		"./processors/ts": "./lib/processors/ts/index.js",
+		"./processors/tsc": "./lib/processors/tsc/index.js"
 	},
 	"engines": {
 		"node": ">=14.0.0"
