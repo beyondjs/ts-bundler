@@ -35,10 +35,9 @@ const workspace = new Workspace(path);
 			const conditional = module.conditionals.get('default');
 			if (conditional) {
 				await conditional.ready;
-				console.log('  • Bundler:', conditional.bundler?.vname);
-				console.log('  • Bundler specs:', conditional.bundler?.specs);
-				console.log('  • Bundler settings:', conditional.bundler?.settings);
-				console.log('  • Bundler processors:', conditional.bundler?.processors);
+				const ts = conditional.processors.get('ts');
+				await ts.sources.inputs.ready;
+				console.log('  • Bundler files:', [...ts.sources.inputs.keys()]);
 			} else {
 				console.log('  • No default bundler found');
 			}
