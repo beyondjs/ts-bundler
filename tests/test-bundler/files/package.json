@@ -7,17 +7,7 @@
 		"path": "."
 	},
 	"bundlers": {
-		"ts": {
-			"specifier": "@beyond-js/ts-bundler",
-			"processors": {
-				"ts": {
-					"specifier": "@beyond-js/ts-bundler/processors/ts"
-				},
-				"tsc": {
-					"specifier": "@beyond-js/ts-bundler/processors/tsc"
-				}
-			}
-		}
+		"ts": "@beyond-js/ts-bundler"
 	},
 	"devDependencies": {
 		"@beyond-js/ts-bundler": "file://../../.."

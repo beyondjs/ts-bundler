@@ -1,6 +1,6 @@
 {
 	"name": "@beyond-js/ts-bundler",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "BeyondJS Typescript Bundler / Processor",
 	"exports": {
 		".": "./lib/module/index.js",
