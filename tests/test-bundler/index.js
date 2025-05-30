@@ -37,12 +37,23 @@ const workspace = new Workspace(__dirname);
 				errors?.length && console.log(`  • Processors errors:', ${[...errors].join(', ')}`);
 				warnings?.length && console.log(`  • Processors warnings:', ${[...warnings].join(', ')}`);
 
-				const ts = conditional.processors.get('ts');
-				console.log('  • Typescript processor:', ts ? 'found'.green : 'not found'.red);
-				if (ts) {
-					await ts.ready;
-					console.log('    • Specs:', ts.specs.values);
-					console.log('    • Inputs:', [...ts.sources.inputs.keys()].join(', '));
+				const tsc = conditional.processors.get('tsc');
+				console.log('  • Typescript processor:', tsc ? 'found'.green : 'not found'.red);
+				if (tsc) {
+					const { types } = tsc.outputs;
+					console.log('    • Specs:', tsc.specs.values);
+
+					// Complete the outputs arrary with the properties 'ims', 'css', and 'types', when they are defined
+					const outputs = [];
+					if (tsc.outputs.ims) outputs.push('ims');
+					if (tsc.outputs.css) outputs.push('css');
+					if (types) outputs.push('types');
+					console.log('    • Outputs:', outputs.length ? outputs.join(', ').green : 'none'.red);
+
+					if (types) {
+						await types.ready;
+						console.log('    • Inputs:', [...tsc.sources.inputs.keys()].join(', '));
+					}
 				}
 			} else {
 				console.log('  • No default bundler found');
