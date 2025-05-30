@@ -1,9 +1,7 @@
 const Workspace = require('beyond/workspace');
-const { join } = require('path');
 require('colors');
 
-const path = join(__dirname, 'files');
-const workspace = new Workspace(path);
+const workspace = new Workspace(__dirname);
 
 (async () => {
 	await workspace.packages.ready;
@@ -26,18 +24,26 @@ const workspace = new Workspace(path);
 			console.log('Module:'.green.bold, module.subpath?.green);
 
 			const { errors, warnings } = module;
-			errors ?? console.log(`  • Errors found: [...${module.errors}].join(', ')}`);
-			warnings ?? console.log(`  • Warnings found: [...${module.warnings}].join(', ')}`);
+			errors?.length && console.log(`  • Errors found: [...${errors}].join(', ')}`);
+			warnings?.length && console.log(`  • Warnings found: [...${warnings}].join(', ')}`);
 
 			await module.conditionals.ready;
 			console.log('  • Conditionals:', [...module.conditionals.keys()].join(', '));
 
 			const conditional = module.conditionals.get('default');
 			if (conditional) {
-				await conditional.ready;
+				await conditional.processors.ready;
+				const { errors, warnings } = conditional.processors;
+				errors?.length && console.log(`  • Processors errors:', ${[...errors].join(', ')}`);
+				warnings?.length && console.log(`  • Processors warnings:', ${[...warnings].join(', ')}`);
+
 				const ts = conditional.processors.get('ts');
-				await ts.sources.inputs.ready;
-				console.log('  • Bundler files:', [...ts.sources.inputs.keys()]);
+				console.log('  • Typescript processor:', ts ? 'found'.green : 'not found'.red);
+				if (ts) {
+					await ts.ready;
+					console.log('    • Specs:', ts.specs.values);
+					console.log('    • Inputs:', [...ts.sources.inputs.keys()].join(', '));
+				}
 			} else {
 				console.log('  • No default bundler found');
 			}

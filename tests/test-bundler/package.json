@@ -10,6 +10,8 @@
 		"ts": "@beyond-js/ts-bundler"
 	},
 	"devDependencies": {
-		"@beyond-js/ts-bundler": "file://../../.."
+		"@beyond-js/ts-bundler": "file://../..",
+		"beyond": "file://../../../../engine",
+		"colors": "^1.4.0"
 	}
 }

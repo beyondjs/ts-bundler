@@ -12,13 +12,15 @@
 	},
 	"keywords": [
 		"beyond",
-		"beyondjs"
+		"beyond-js",
+		"beyondjs",
+		"bundler",
+		"typescript"
 	],
 	"author": "BeyondJS",
 	"license": "MIT",
 	"dependencies": {
 		"typescript": "~5.7.3",
-		"@beyond-js/dynamic-processor": "~0.0.7",
 		"@beyond-js/equal": "~0.0.1",
 		"@beyond-js/bundlers-sdk": "file://../../bundlers-sdk"
 	}
