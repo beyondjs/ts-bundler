@@ -22,6 +22,7 @@
 	"dependencies": {
 		"typescript": "~5.7.3",
 		"@beyond-js/equal": "~0.0.1",
-		"@beyond-js/bundlers-sdk": "file://../../bundlers-sdk"
+		"@beyond-js/bundlers-sdk": "file://../../bundlers-sdk",
+		"@swc/core": "^1.3.60"
 	}
 }
