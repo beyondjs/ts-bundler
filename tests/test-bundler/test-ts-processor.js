@@ -33,12 +33,30 @@ const workspace = new Workspace(__dirname);
 			const conditional = module.conditionals.get('default');
 			console.log('  • Default conditional outputs:', [...conditional.outputs.keys()].join(', '));
 
-			const esm = conditional.outputs.get('esm');
-			if (esm) {
-				await esm.ready;
-				const { errors, warnings } = esm;
-				errors?.length && console.log(`  • ESM output errors:', ${[...errors].join(', ')}`);
-				warnings?.length && console.log(`  • ESM output warnings:', ${[...warnings].join(', ')}`);
+			if (conditional) {
+				await conditional.processors.ready;
+				const { errors, warnings } = conditional.processors;
+				errors?.length && console.log(`  • Processors errors:', ${[...errors].join(', ')}`);
+				warnings?.length && console.log(`  • Processors warnings:', ${[...warnings].join(', ')}`);
+
+				const ts = conditional.processors.get('ts');
+				console.log('  • Typescript [transcript] processor:', ts ? 'found'.green : 'not found'.red);
+				if (ts) {
+					const { ims } = ts.outputs;
+					console.log('    • Specs:', ts.specs.values);
+
+					// Complete the outputs arrary with the properties 'ims', 'css', and 'types', when they are defined
+					const outputs = [];
+					if (ts.outputs.ims) outputs.push('ims');
+					if (ts.outputs.css) outputs.push('css');
+					if (ts.outputs.types) outputs.push('types');
+					console.log('    • Outputs:', outputs.length ? outputs.join(', ').green : 'none'.red);
+
+					if (ims) {
+						await ims.ready;
+						console.log('    • Inputs:', [...ts.sources.inputs.keys()].join(', '));
+					}
+				}
 			} else {
 				console.log('  • No default bundler found');
 			}
