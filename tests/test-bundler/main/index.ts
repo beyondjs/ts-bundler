@@ -1,1 +1,1 @@
-export const message = 'hello world';
+export /*bundle*/ const message = 'hello world';
