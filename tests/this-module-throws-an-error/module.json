@@ -1,0 +1,5 @@
+{
+	"name": "bug-fix",
+	"bundle": "ts",
+	"files": "*"
+}
